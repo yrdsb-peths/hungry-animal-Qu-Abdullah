@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Elephant extends Actor
+public class Apple extends Actor
 {
 
     /**
@@ -15,11 +15,6 @@ public class Elephant extends Actor
      */
     public void act()
     {    
-        if(Greenfoot.isKeyDown("a")){
-            move(2);
-        }
-        if(greenfoot.isKeyDown("d")){
-            move(-2);
-        }
+        setLocation(getX(),getY()+1);
     }
 }
