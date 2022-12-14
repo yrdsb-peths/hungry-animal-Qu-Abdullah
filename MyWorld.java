@@ -12,6 +12,7 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    GreenfootSound loseSound = new GreenfootSound("losesound.wav");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -41,7 +42,9 @@ public class MyWorld extends World
     
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over",100);
+        loseSound.play();
         addObject(gameOverLabel,300,200);
+
     }
     
     public void createApple(){
