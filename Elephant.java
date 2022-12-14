@@ -35,6 +35,7 @@ public class Elephant extends Actor
             move(2);
         }
         eat();
+        animateElephant();
     }
     
     public void eat(){
