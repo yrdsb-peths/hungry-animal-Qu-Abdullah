@@ -12,6 +12,9 @@ public class Elephant extends Actor
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     
+    private int elephantScore = 0;
+    private int speed = 2;
+    
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -53,11 +56,11 @@ public class Elephant extends Actor
     
     public void act(){
         if(Greenfoot.isKeyDown("left")){
-            move(-2);
             facing = "left";
+            move(-speed);
         } else if(Greenfoot.isKeyDown("right")){
-            move(2);
             facing = "right";
+            move(speed);
         }
         eat();
         
@@ -72,6 +75,10 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
             world.increaseScore();
+            elephantScore++;
+            if(elephantScore % 15 == 0){
+                speed++;
+            }
     }
     }
     
