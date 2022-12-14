@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Apple.image=apple.png
-class.Elephant.image=elephant.png
+class.Elephant.image=elephant_idle.png
 class.MyWorld.image=background.jpg
 class.TitleScreen.image=background.jpg
 dependency1.from=MyWorld
