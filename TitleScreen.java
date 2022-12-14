@@ -42,5 +42,6 @@ public class TitleScreen extends World
         Elephant elephant = new Elephant();
         addObject(elephant,289,176);
         elephant.setLocation(327,206);
+        elephant.setLocation(299,217);
     }
 }
