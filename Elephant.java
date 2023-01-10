@@ -61,18 +61,6 @@ public class Elephant extends Actor
         }
     }
     
-    public void elephantDeath(){
-        MyWorld world = (MyWorld) getWorld();
-        
-        Actor apple = world.getObjects(Apple.class);
-        if(animationTimer.millisElapsed() < 125){
-            return;
-        }
-        
-        animationTimer.mark();
-        setImage(death[imageIndex]);
-        imageIndex = (imageIndex + 1) % death.length;
-    }
     
     public void act(){
         if(Greenfoot.isKeyDown("left")){
