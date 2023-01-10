@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The world where the elephant lives in.
  * 
  * @author Abdullah 
  * @version 12/01/2022

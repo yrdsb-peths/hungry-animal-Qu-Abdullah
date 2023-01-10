@@ -80,9 +80,8 @@ public class Elephant extends Actor
             move(speed);
         }
         eat();
-        
         animateElephant();
-        elephantDeath();
+
     }
     
     public void eat(){
