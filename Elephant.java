@@ -62,6 +62,9 @@ public class Elephant extends Actor
     }
     
     public void elephantDeath(){
+        MyWorld world = (MyWorld) getWorld();
+        
+        Actor apple = world.getObjects(Apple.class);
         if(animationTimer.millisElapsed() < 125){
             return;
         }

@@ -12,7 +12,7 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
-    GreenfootSound loseSound = new GreenfootSound("losesound.wav");
+    GreenfootSound loseSound = new GreenfootSound("Death.mp3");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -23,7 +23,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
-        Elephant elephant = new Elephant();
+        Elephant elephant= new Elephant();
         addObject(elephant,300,300);
         
         scoreLabel = new Label(0,80);
@@ -41,7 +41,9 @@ public class MyWorld extends World
     }
     
     public void gameOver(){
+    
         Label gameOverLabel = new Label("Game Over",100);
+        
         loseSound.play();
         addObject(gameOverLabel,300,200);
 
