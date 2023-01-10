@@ -15,13 +15,25 @@ This particular repository is the starting template for the Hungry Elephant tuto
 
 ==========[NEW FEATURES]==========
 
-[1] Defeat Music.
+[1] Redesigned the Actors
+
+  --> Replaced the Elephant with Pacman.
+  
+  --> Replaced the Apple with Bits that Pacman eats.
+  
+
+[2] Added Audio
+  
+  --> Changed the eating noise to match Pacman.
+  
+  --> Added Intro music.
 
   --> After losing, defeat music plays.
 
-[2] Increasing Elephant Speed
 
-  --> The Apples speed only increasing will make it eventually impossible to reach apples.
+[3] Increasing Pacman's Speed
+
+  --> The Bits speed only increasing will make it eventually impossible to reach apples.
   
-  --> The elephant's speed increases after every 15 apples eaten.
+  --> Pacman's speed increases after every 15 apples eaten.
   
