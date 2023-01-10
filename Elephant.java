@@ -1,16 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
+/*
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Qureshi
+ * @2023
  */
 public class Elephant extends Actor
 {
-    GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
-    GreenfootImage[] idleRight = new GreenfootImage[8];
-    GreenfootImage[] idleLeft = new GreenfootImage[8];
+    GreenfootSound elephantSound = new GreenfootSound("pacman_chomp.wav");
+    GreenfootImage[] idleRight = new GreenfootImage[4];
+    GreenfootImage[] idleLeft = new GreenfootImage[4];
+    GreenfootImage[] death = new GreenfootImage[10];
     
     private int elephantScore = 0;
     private int speed = 2;
@@ -21,14 +22,18 @@ public class Elephant extends Actor
     
     public Elephant(){
         for(int i = 0; i < idleRight.length;i++){
-            idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i  + ".png");
+            idleRight[i] = new GreenfootImage("images\\pacman_walk\\idle" + i  + ".png");
             idleRight[i].scale(100,100);
         }
         
         for(int i = 0; i < idleLeft.length;i++){
-            idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i  + ".png");
+            idleLeft[i] = new GreenfootImage("images\\pacman_walk\\idle" + i  + ".png");
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(100,100);
+        }
+        
+        for(int i = 0; i < death.length; i++){
+            death[i] = new GreenfootImage("images\\anti_pacman\\death_" + i + ".png");
         }
         
         animationTimer.mark();
@@ -38,6 +43,8 @@ public class Elephant extends Actor
     
     int imageIndex = 0;
     public void animateElephant(){
+
+        
         if(animationTimer.millisElapsed() < 125){
             return;
         }
@@ -54,6 +61,16 @@ public class Elephant extends Actor
         }
     }
     
+    public void elephantDeath(){
+        if(animationTimer.millisElapsed() < 125){
+            return;
+        }
+        
+        animationTimer.mark();
+        setImage(death[imageIndex]);
+        imageIndex = (imageIndex + 1) % death.length;
+    }
+    
     public void act(){
         if(Greenfoot.isKeyDown("left")){
             facing = "left";
@@ -65,6 +82,7 @@ public class Elephant extends Actor
         eat();
         
         animateElephant();
+        elephantDeath();
     }
     
     public void eat(){
@@ -72,7 +90,7 @@ public class Elephant extends Actor
         if(isTouching(Apple.class)){
             removeTouching(Apple.class);
             elephantSound.play();
-            MyWorld world = (MyWorld) getWorld();
+            MyWorld world = (MyWorld) getWorld();         
             world.createApple();
             world.increaseScore();
             elephantScore++;
