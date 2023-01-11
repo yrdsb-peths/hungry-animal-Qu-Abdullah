@@ -11,10 +11,6 @@ public class Apple extends Actor
 
     private int speed = 1;
     
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
     public void act()
     {    
         setLocation(getX(),getY()+speed);
