@@ -22,18 +22,18 @@ public class Elephant extends Actor
     
     public Elephant(){
         for(int i = 0; i < idleRight.length;i++){
-            idleRight[i] = new GreenfootImage("images\\pacman_walk\\idle" + i  + ".png");
+            idleRight[i] = new GreenfootImage("images/pacman_walk/idle" + i  + ".png");
             idleRight[i].scale(100,100);
         }
         
         for(int i = 0; i < idleLeft.length;i++){
-            idleLeft[i] = new GreenfootImage("images\\pacman_walk\\idle" + i  + ".png");
+            idleLeft[i] = new GreenfootImage("images/pacman_walk/idle" + i  + ".png");
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(100,100);
         }
         
         for(int i = 0; i < death.length; i++){
-            death[i] = new GreenfootImage("images\\anti_pacman\\death_" + i + ".png");
+            death[i] = new GreenfootImage("images/anti_pacman/death_" + i + ".png");
         }
         
         animationTimer.mark();
